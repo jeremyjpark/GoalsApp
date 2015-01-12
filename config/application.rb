@@ -23,7 +23,7 @@ module GProject
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
 
-    config.generator do |g|
+    config.generators do |g|
       g.test_frameword :rspec,
       fixtures: :true,
       view_specs: :false,
@@ -31,5 +31,6 @@ module GProject
       routing_specs: :false,
       controller_specs: :true,
       request_specs: :true
+    end
   end
 end
