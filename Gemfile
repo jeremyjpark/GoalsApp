@@ -46,4 +46,6 @@ end
 
 group :test do
   gem 'guard-rspec'
+  gem 'capybara'
+  gem 'faker'
 end
