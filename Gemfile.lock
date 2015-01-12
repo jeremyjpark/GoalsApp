@@ -36,6 +36,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
+    addressable (2.3.6)
     arel (6.0.0)
     bcrypt (3.1.9)
     binding_of_caller (0.7.2)
@@ -98,6 +99,8 @@ GEM
       railties (>= 4.2.0.beta)
       thor (>= 0.14, < 2.0)
     json (1.8.2)
+    launchy (2.4.3)
+      addressable (~> 2.3)
     listen (2.8.5)
       celluloid (>= 0.15.2)
       rb-fsevent (>= 0.9.3)
@@ -229,6 +232,7 @@ DEPENDENCIES
   guard-rspec
   jbuilder (~> 2.0)
   jquery-rails
+  launchy
   rails (= 4.2.0.rc1)
   rspec-rails
   sass-rails (~> 4.0)
