@@ -9,10 +9,12 @@
 #  public     :boolean          default("f"), not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  completed  :boolean          default("f"), not null
 #
 
 class Goal < ActiveRecord::Base
   belongs_to :user
+  has_many :comments, as: :owner
 
   validates :user_id, :title, presence: true
   validates :public, :completed, inclusion: [true, false]
