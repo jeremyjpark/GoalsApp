@@ -1,0 +1,20 @@
+<h1>Goals</h1>
+<!-- display goals -->
+<table>
+  <th>Title</th>
+  <th>Body</th>
+  <th>Public</th>
+  <th>Completed</th>
+  <% @goals.each do |goal| %>
+  <tr>
+    <td><%= goal.title%></td>
+    <td><%= goal.body%></td>
+    <td><%= goal.public%></td>
+    <td><%= goal.completed%></td>
+    <td><%= button_to "delete", goal_url(goal), method: :delete if logged_in? && current_user.id == goal.user_id%></td>
+  </tr>
+  <% end %>
+
+</table>
+<!-- button for new goal -->
+<%= button_to "New Goal", new_goal_url, method: :get %>

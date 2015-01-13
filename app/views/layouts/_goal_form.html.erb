@@ -1,0 +1,21 @@
+<form action="<%= action %>" method="post">
+  <% if update %>
+    <input type="hidden" name="_method" value="patch">
+  <% end %>
+
+  <%= auth_token %>
+  <label>
+    Title <input type="text" name="goal[title]" value="<%= @goal.title %>">
+  </label>
+  <label>
+    Body <textarea name="goal[body]"><%= @goal.body %></textarea>
+  </label>
+  <label>
+    Public <input type="checkbox" name='goal[public]' <%= @goal.public ? "checked" : "" %> >
+  </label>
+  <label>
+    Completed <input type="checkbox" name='goal[completed]' <%= @goal.completed ? "checked" : "" %> >
+  </label>
+
+  <input type="submit" value="<%= submit_text %>">
+</form>

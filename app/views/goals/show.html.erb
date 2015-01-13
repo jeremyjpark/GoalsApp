@@ -1,0 +1,5 @@
+<%= @goal.title %>
+<%= @goal.body %>
+Completed: <%= @goal.completed %>
+
+<%= button_to "delete", goal_url(@goal), method: :delete %>
