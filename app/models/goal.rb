@@ -13,8 +13,8 @@
 #
 
 class Goal < ActiveRecord::Base
+  include Commentable
   belongs_to :user
-  has_many :comments, as: :owner
 
   validates :user_id, :title, presence: true
   validates :public, :completed, inclusion: [true, false]

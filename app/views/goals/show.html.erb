@@ -1,5 +1,13 @@
-<%= @goal.title %>
-<%= @goal.body %>
-Completed: <%= @goal.completed %>
-
+<table>
+<tr>
+  <td>Title:</td><td><%= @goal.title %></td>
+</tr>
+<tr>
+  <td>Description:</td><td><%= @goal.body %></td>
+</tr>
+<tr>
+  <td>Completed:</td><td><%= @goal.completed %></td>
+</tr>
+</table>
+<%= button_to "edit", edit_goal_url(@goal), method: :get %>
 <%= button_to "delete", goal_url(@goal), method: :delete %>

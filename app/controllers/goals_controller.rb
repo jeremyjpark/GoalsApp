@@ -36,6 +36,7 @@ class GoalsController < ApplicationController
 
   def update
     @goal = Goal.find(params[:id])
+
     if @goal.update(goal_params)
       redirect_to goals_url
     else
@@ -54,6 +55,9 @@ class GoalsController < ApplicationController
   private
 
   def goal_params
-    params.require(:goal).permit(:title, :body, :public, :completed)
+    a = params.require(:goal).permit(:title, :body, :public, :completed)
+    a[:public] = a[:public] == "on"
+    a[:completed] = a[:completed] == "on"
+    a
   end
 end

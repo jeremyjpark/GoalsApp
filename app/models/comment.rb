@@ -11,6 +11,7 @@
 #
 
 class Comment < ActiveRecord::Base
+  include Commentable
   validates :content, :owner_id, :owner_type, presence: true
 
   belongs_to :owner, polymorphic: true

@@ -11,7 +11,10 @@
     <td><%= goal.body%></td>
     <td><%= goal.public%></td>
     <td><%= goal.completed%></td>
-    <td><%= button_to "delete", goal_url(goal), method: :delete if logged_in? && current_user.id == goal.user_id%></td>
+    <% if logged_in? && current_user.id == goal.user_id %>
+      <td><%= button_to "edit", edit_goal_url(goal), method: :get %></td>
+      <td><%= button_to "delete", goal_url(goal), method: :delete %></td>
+    <% end %>
   </tr>
   <% end %>
 
